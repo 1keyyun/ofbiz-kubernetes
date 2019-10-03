@@ -5,6 +5,7 @@ run   apt-get update && \
       apt-get install -y subversion
 MAINTAINER ami cohen "amitca71@gmail.com"
 RUN svn co http://svn.apache.org/repos/asf/ofbiz/ofbiz-framework/branches/release18.12 ofbiz.18.12
+RUN svn co http://svn.apache.org/repos/asf/ofbiz/ofbiz-plugins/trunk ofbiz.18.12/plugins
 workdir ofbiz.18.12
 RUN ./gradlew loadall
 cmd  ./gradlew ofbiz
